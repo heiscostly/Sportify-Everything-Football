@@ -5,12 +5,6 @@ import axios from "axios";
 import TableContainer from "../table/TableContainer";
 
 function SportsContainer() {
-  const [datas, setData] = React.useState([]);
-  const [nextData, setNextdata] = React.useState(null);
-  const [show, setShow] = React.useState(false);
-
-  console.log(nextData, "nextData");
-  // console.log(datas, "data");
   React.useEffect(() => {
     axios({
       method: "get",
@@ -21,10 +15,15 @@ function SportsContainer() {
     })
       .then((response) => response.data)
       .then((data) => {
-        // console.log(data, "sup data");
         setData(data.competitions);
       });
   }, []);
+  const [datas, setData] = React.useState([]);
+  const [nextData, setNextdata] = React.useState(null);
+  const [show, setShow] = React.useState(false);
+
+  console.log(datas, "nextsData");
+
   return (
     <>
       <SportContainerDiv>
@@ -32,7 +31,6 @@ function SportsContainer() {
           <div className="cont">
             <h1>All Competition</h1>
             <div className="sports-container">
-              {/* <h1>All Competition</h1> */}
               {datas &&
                 datas.map((item, index) => (
                   <Card
@@ -43,23 +41,13 @@ function SportsContainer() {
                     item={item}
                   />
                 ))}
-              {/* <div > */}
-              {/* <Card /> */}
-              {/* </div> */}
             </div>
           </div>
         ) : (
           <div className="cont">
             <h1>All Competition</h1>
-            {/* <div className="sports-container"> */}
-            {/* <h1>All Competitioners</h1> */}
+
             <TableContainer nextData={nextData} />
-            {/* {datas &&
-              datas.map((item, index) => <Card key={index} item={item} />)} */}
-            {/* <div > */}
-            {/* <Card /> */}
-            {/* </div> */}
-            {/* </div> */}
           </div>
         )}
       </SportContainerDiv>
