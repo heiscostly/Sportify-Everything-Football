@@ -1,15 +1,18 @@
 import React from "react";
 import { CardContainer } from "./CardStyle";
-import Mobile from "./../../assets/img/mobile.png";
-function Card() {
+function Card({ item, setNextdata, setShow, show }) {
+  const handleClick = () => {
+    setNextdata(item.id);
+    setShow(!show);
+  };
   return (
-    <CardContainer>
+    <CardContainer onClick={handleClick}>
       <div className="image__cont">
-        <img src={Mobile} alt="" srcset="" />
+        <img src={item.emblemUrl} alt="" />
       </div>
       <div className="content__cont">
-        <h4>User Interface & User Experience</h4>
-        <p>England</p>
+        <h4>{item.name}</h4>
+        <p>{item.area.name}</p>
       </div>
     </CardContainer>
   );

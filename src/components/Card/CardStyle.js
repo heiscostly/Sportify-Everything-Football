@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   width: 300px;
   height: 145px;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
 
   @media (max-width: 350px) {
@@ -27,7 +27,7 @@ export const CardContainer = styled.div`
       font-family: "Poppins";
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 1.25rem;
     }
     p {
       margin: 0;

@@ -6,7 +6,7 @@ function Header() {
   return (
     <HeaderContainer>
       <div className="header-bg">
-        <img src={Sport} alt="" srcset="" />
+        <img src={Sport} alt="" />
       </div>
     </HeaderContainer>
   );
