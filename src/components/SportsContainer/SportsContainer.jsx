@@ -16,7 +16,7 @@ function SportsContainer() {
       method: "get",
       url: "https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
       headers: {
-        "X-Auth-Token": "72dbb17e60814dd592d41f91185a4c4d",
+        "X-Auth-Token": `${process.env.REACT_APP_AUTH}`,
       },
     })
       .then((response) => response.data)
