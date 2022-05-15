@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React, { Fragment } from "react";
 import { useTable, usePagination } from "react-table";
-import { TableContainer, TableSection, Header } from "./TableStyles";
+import { TableContainer, TableSection } from "./TableStyles";
 
 const TransactionTable = ({
   columns,
