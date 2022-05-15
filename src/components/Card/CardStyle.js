@@ -5,8 +5,12 @@ export const CardContainer = styled.div`
   width: 300px;
   height: 145px;
   display: flex;
-  // justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
   align-items: center;
+  :hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: 350px) {
     justify-self: center;
