@@ -6,7 +6,6 @@ export const SportContainerDiv = styled.div`
   justify-content: center;
   align-items: center;
   background: white;
-
   padding-bottom: 50px;
   .cont {
     margin-top: -50px;
