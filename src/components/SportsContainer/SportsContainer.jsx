@@ -3,9 +3,15 @@ import { SportContainerDiv } from "./SportsContainer.style";
 import Card from "../Card/Card";
 import axios from "axios";
 import TableContainer from "../table/TableContainer";
+import { BeatLoader } from "react-spinners";
 
 function SportsContainer() {
+  const [datas, setData] = React.useState([]);
+  const [nextData, setNextdata] = React.useState(null);
+  const [show, setShow] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   React.useEffect(() => {
+    setIsLoading(true);
     axios({
       method: "get",
       url: "https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
@@ -16,11 +22,9 @@ function SportsContainer() {
       .then((response) => response.data)
       .then((data) => {
         setData(data.competitions);
+        setIsLoading(false);
       });
   }, []);
-  const [datas, setData] = React.useState([]);
-  const [nextData, setNextdata] = React.useState(null);
-  const [show, setShow] = React.useState(false);
 
   console.log(datas, "nextsData");
 
@@ -30,22 +34,26 @@ function SportsContainer() {
         {!show ? (
           <div className="cont">
             <h1>All Competition</h1>
-            <div className="sports-container">
-              {datas &&
-                datas.map((item, index) => (
-                  <Card
-                    setNextdata={setNextdata}
-                    setShow={setShow}
-                    show={show}
-                    key={index}
-                    item={item}
-                  />
-                ))}
-            </div>
+            {isLoading ? (
+              <BeatLoader size={15} color={"#123abc"} loading={isLoading} />
+            ) : (
+              <div className="sports-container">
+                {datas &&
+                  datas.map((item, index) => (
+                    <Card
+                      setNextdata={setNextdata}
+                      setShow={setShow}
+                      show={show}
+                      key={index}
+                      item={item}
+                    />
+                  ))}
+              </div>
+            )}
           </div>
         ) : (
           <div className="cont">
-            <h1>All Competition</h1>
+            <h1>Championship</h1>
 
             <TableContainer nextData={nextData} />
           </div>
