@@ -27,7 +27,6 @@ const TransactionTable = ({
         <TableSection isLoading={loading}>
           <TableContainer>
             <div className="table-responsive">
-              <Header>Complain History</Header>
               <table className="table mb-0" {...getTableProps()}>
                 <thead className="table-borderless">
                   {headerGroups.map((headerGroup) => (

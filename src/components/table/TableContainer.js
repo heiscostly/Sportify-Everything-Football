@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Table from "./Table";
 
@@ -74,36 +74,5 @@ const AllCustomersTableContainer = ({ nextData }) => {
     </div>
   );
 };
-
-const Status = styled.div`
-  background: ${({ status }) =>
-    status === "PENDING"
-      ? "rgba(242, 201, 76, 0.3)"
-      : status === "RESOLVED"
-      ? "rgba(39, 174, 96, 0.3)"
-      : status === "EXPIRED"
-      ? "rgba(235, 87, 87, 0.3)"
-      : ""};
-  width: 56px;
-  height: 24px;
-  border-radius: 6px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: -0.01px;
-  color: ${({ status }) =>
-    status === "PENDING"
-      ? "#FFC05C"
-      : status === "RESOLVED"
-      ? "#14772A"
-      : status === "EXPIRED"
-      ? "#F14336"
-      : ""};
-`;
 
 export default AllCustomersTableContainer;
