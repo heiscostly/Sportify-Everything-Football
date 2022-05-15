@@ -52,7 +52,10 @@ function SportsContainer() {
             )}
           </div>
         ) : (
-          <div className="cont">
+          <div className="champ-cont">
+            <h4>
+              <a href="/">All Competition</a>/ Championship
+            </h4>
             <h1>Championship</h1>
 
             <TableContainer nextData={nextData} />
