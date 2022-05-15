@@ -8,7 +8,7 @@ function SportsContainer() {
   React.useEffect(() => {
     axios({
       method: "get",
-      url: "http://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
+      url: "https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
       headers: {
         "X-Auth-Token": "72dbb17e60814dd592d41f91185a4c4d",
       },
